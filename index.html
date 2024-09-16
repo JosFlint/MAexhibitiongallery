@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Image Test</title>
+    <!-- Include Three.js from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Include Panolens.js from a CDN -->
+    <script src="https://raw.githubusercontent.com/JosFlint/MAexhibitiongallery/main/panolens.min.js"></script>
+</head>
+<body>
+    <!-- Container for the 360° image viewer -->
+    <div id="panorama-viewer" style="width: 100%; height: 500px;"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create a new PANOLENS.ImagePanorama object with the image URL
+            const panorama = new PANOLENS.ImagePanorama('https://josflint.github.io/MAexhibitiongallery/20240916_094944_397.jpg');
+            // Create a new PANOLENS.Viewer object and configure it
+            const viewer = new PANOLENS.Viewer({
+                container: document.querySelector('#panorama-viewer'),
+                autoRotate: true,
+                autoRotateSpeed: 0.5
+            });
+            // Add the panorama to the viewer
+            viewer.add(panorama);
+        });
+    </script>
+</body>
+</html>
